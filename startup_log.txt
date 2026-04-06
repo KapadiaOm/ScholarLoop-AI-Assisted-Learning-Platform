@@ -1,0 +1,148 @@
+﻿==================================================
+DeepTutor Web Platform Launcher
+==================================================
+python : Traceback 
+(most recent call 
+last):
+At line:1 char:1
++ python 
+scripts/start_web.py 
+2>&1 | Out-File 
+-Encoding utf8 
+startup_lo ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Traceba   
+ ck (most recent     
+call last)::Stri    
+ng) [], RemoteEx    
+ception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+  File "C:\Users\Om\D
+ownloads\DeepTutor-ma
+in\DeepTutor-main\scr
+ipts\start_web.py", 
+line 439, in <module>
+    backend = 
+start_backend()
+  File "C:\Users\Om\D
+ownloads\DeepTutor-ma
+in\DeepTutor-main\scr
+ipts\start_web.py", 
+line 157, in 
+start_backend
+    print_flush(f"\U0
+001f680 Starting 
+FastAPI Backend 
+using 
+{sys.executable}...")
+  File "C:\Users\Om\D
+ownloads\DeepTutor-ma
+in\DeepTutor-main\scr
+ipts\start_web.py", 
+line 26, in 
+print_flush
+    print(*args, 
+**kwargs)
+  File "C:\Users\Om\A
+ppData\Local\Programs
+\Python\Python310\lib
+\encodings\cp1252.py"
+, line 19, in encode
+    return codecs.cha
+rmap_encode(input,sel
+f.errors,encoding_tab
+le)[0]
+UnicodeEncodeError: 
+'charmap' codec 
+can't encode 
+character 
+'\U0001f680' in 
+position 0: 
+character maps to 
+<undefined>
+
+During handling of 
+the above exception, 
+another exception 
+occurred:
+
+Traceback (most 
+recent call last):
+  File "C:\Users\Om\D
+ownloads\DeepTutor-ma
+in\DeepTutor-main\scr
+ipts\start_web.py", 
+line 513, in <module>
+    print_flush(f"\n\
+u274c Error: {e}")
+  File "C:\Users\Om\D
+ownloads\DeepTutor-ma
+in\DeepTutor-main\scr
+ipts\start_web.py", 
+line 26, in 
+print_flush
+    print(*args, 
+**kwargs)
+  File "C:\Users\Om\A
+ppData\Local\Programs
+\Python\Python310\lib
+\encodings\cp1252.py"
+, line 19, in encode
+    return codecs.cha
+rmap_encode(input,sel
+f.errors,encoding_tab
+le)[0]
+UnicodeEncodeError: 
+'charmap' codec 
+can't encode 
+character '\u274c' 
+in position 2: 
+character maps to 
+<undefined>
+
+During handling of 
+the above exception, 
+another exception 
+occurred:
+
+Traceback (most 
+recent call last):
+  File "C:\Users\Om\D
+ownloads\DeepTutor-ma
+in\DeepTutor-main\scr
+ipts\start_web.py", 
+line 523, in <module>
+    
+print_flush("\u2705 
+All services 
+stopped.")
+  File "C:\Users\Om\D
+ownloads\DeepTutor-ma
+in\DeepTutor-main\scr
+ipts\start_web.py", 
+line 26, in 
+print_flush
+    print(*args, 
+**kwargs)
+  File "C:\Users\Om\A
+ppData\Local\Programs
+\Python\Python310\lib
+\encodings\cp1252.py"
+, line 19, in encode
+    return codecs.cha
+rmap_encode(input,sel
+f.errors,encoding_tab
+le)[0]
+UnicodeEncodeError: 
+'charmap' codec 
+can't encode 
+character '\u2705' 
+in position 0: 
+character maps to 
+<undefined>

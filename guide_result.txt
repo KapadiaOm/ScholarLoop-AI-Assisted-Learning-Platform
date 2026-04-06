@@ -1,0 +1,11 @@
+﻿============================================================
+Guide Module Diagnostic
+============================================================
+[CodeExecutor] DEBUG: Loaded run_code config from solve_config.yaml (with main.yaml)
+LLM Config:
+  Binding: gemini
+  Model: gemini-2.5-flash
+
+1. Testing LocateAgent...
+[Guide.locate_agent] DEBUG: Prompts loaded: locate_agent (en)
+[Guide.locate_agent] DEBUG: LLM Input [locate_agent:locate_agent] system=3276chars, user=939chars

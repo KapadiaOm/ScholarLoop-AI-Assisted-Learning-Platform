@@ -1,0 +1,29 @@
+﻿============================================================
+LLM Configuration Diagnostic
+============================================================
+
+1. Environment Variables:
+   LLM_BINDING: gemini
+   LLM_MODEL: gemini-2.5-flash
+   LLM_HOST: https://generativelanguage.googleapis.com
+   LLM_API_KEY: AIzaSyChyi...
+
+2. Unified Config (get_active_llm_config):
+   provider: gemini
+   model: gemini-2.5-flash
+   base_url: https://generativelanguage.googleapis.com
+
+3. LLM Config (get_llm_config):
+   binding: gemini
+   model: gemini-2.5-flash
+   base_url: https://generativelanguage.googleapis.com
+
+4. BaseAgent Test:
+[CodeExecutor] DEBUG: Loaded run_code config from solve_config.yaml (with main.yaml)
+[Chat.chat_agent] DEBUG: Prompts loaded: chat_agent (en)
+[Chat.chat_agent] INFO: ChatAgent initialized: model=gemini-2.5-flash, base_url=https://generativelanguage.googleapis.com
+   agent.binding: gemini
+   agent.model: gemini-2.5-flash
+   agent.base_url: https://generativelanguage.googleapis.com
+
+============================================================

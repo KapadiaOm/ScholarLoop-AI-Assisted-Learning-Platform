@@ -1,0 +1,83 @@
+﻿============================================================
+Idea Generator Diagnostic
+============================================================
+[CodeExecutor] DEBUG: Loaded run_code config from solve_config.yaml (with main.yaml)
+LLM Config:
+  Binding: gemini
+  Model: gemini-2.5-flash
+
+1. Testing MaterialOrganizerAgent...
+[Ideagen.material_organizer] DEBUG: Prompts loaded: material_organizer (en)
+[Ideagen.material_organizer] INFO: Processing 1 records...
+[Ideagen.material_organizer] DEBUG: LLM Input [material_organizer:material_organizer] system=2129chars, user=312chars
+python : C:\Users\Om\Downloads\DeepTutor-main\DeepTutor-main\src\services\llm\cloud_provider.py:581: FutureWarning: 
+At line:1 char:1
++ python scripts/diagnose_ideagen.py 2>&1 | Out-File -Encoding utf8 ide ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo              : NotSpeci    fied: (C:\Users\O    m\Dow...FutureWar    ning: :String) []    , RemoteException
+    + FullyQualifiedE    rrorId : NativeCo    mmandError
+ 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1773057971.231396   36304 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+[Ideagen.material_organizer] DEBUG: LLM Output [material_organizer:material_organizer] response=518chars
+[Ideagen.material_organizer] DEBUG: LLM response: model=gemini-2.5-flash, duration=5.17s
+[Ideagen.material_organizer] DEBUG: LLM response length: 518 chars
+[Ideagen.material_organizer] ERROR: JSON decode error: Expecting value: line 1 column 1 (char 0)
+[Ideagen.material_organizer] DEBUG: Raw response: ```json
+{
+  "knowledge_points": [
+    {
+      "knowledge_point": "Python Programming Language Fundamentals",
+      "description": "Python is identified as a high-level programming language. This classification implies it offers a strong abstraction from the computer's hardware, focusing on human-readable syntax and programmer convenience rather than low-level details. This characteristic is fundamental to understanding Python's design philosophy and its broad applicability across various domains...
+[Ideagen.material_organizer] DEBUG: LLM Input [material_organizer:material_organizer] system=602chars, user=188chars
+E0000 00:00:1773057974.023617   36304 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+[Ideagen.material_organizer] DEBUG: LLM Output [material_organizer:material_organizer] response=479chars
+[Ideagen.material_organizer] DEBUG: LLM response: model=gemini-2.5-flash, duration=2.06s
+Extracted 1 knowledge points: [{'knowledge_point': 'Comprehensive Research Topic', 'description': 'Based on the selected 1 notebook records, multiple research directions and knowledge points can be explored.'}]
+
+2. Testing IdeaGenerationWorkflow...
+[Ideagen.idea_generation] DEBUG: Prompts loaded: idea_generation (en)
+[Ideagen.idea_generation] INFO: Calling LLM to filter 1 knowledge points...
+[Ideagen.idea_generation] DEBUG: LLM Input [idea_generation:idea_generation] system=1169chars, user=332chars
+E0000 00:00:1773057976.148471   36304 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+[Ideagen.idea_generation] DEBUG: LLM Output [idea_generation:idea_generation] response=243chars
+[Ideagen.idea_generation] DEBUG: LLM response: model=gemini-2.5-flash, duration=3.51s
+[Ideagen.idea_generation] DEBUG: LLM response length: 243 chars
+[Ideagen.idea_generation] ERROR: JSON decode error: Expecting value: line 1 column 1 (char 0)
+[Ideagen.idea_generation] DEBUG: Raw response: ```json
+{
+  "filtered_points": [
+    {
+      "knowledge_point": "Comprehensive Research Topic",
+      "description": "Based on the selected 1 notebook records, multiple research directions and knowledge points can be explored."
+    }
+  ]
+}
+```...
+[Ideagen.idea_generation] INFO: Generating ideas for: Comprehensive Research Topic
+[Ideagen.idea_generation] DEBUG: LLM Input [idea_generation:idea_generation] system=1724chars, user=300chars
+E0000 00:00:1773057979.657023   36304 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+[Ideagen.idea_generation] DEBUG: LLM Output [idea_generation:idea_generation] response=2252chars
+[Ideagen.idea_generation] DEBUG: LLM response: model=gemini-2.5-flash, duration=11.42s
+[Ideagen.idea_generation] DEBUG: LLM response length: 2252 chars
+[Ideagen.idea_generation] ERROR: JSON decode error: Expecting value: line 1 column 1 (char 0)
+[Ideagen.idea_generation] DEBUG: Raw response: ```json
+{
+  "research_ideas": [
+    "Develop an AI-driven framework for automated extraction and formalization of experimental parameters, observations, and preliminary conclusions from scanned or transcribed scientific notebook entries, integrating multimodal AI (OCR, image analysis for diagrams) and natural language processing (NLP) for concept linking and knowledge graph generation.",
+    "Investigate methodologies for inferring the implicit research questions, theoretical frameworks, or expe...
+Final Markdown Length: 36
+
+# Research Ideas Generation Result
+
+...
+
+Idea Generator test completed successfully!

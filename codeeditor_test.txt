@@ -1,0 +1,3 @@
+STDOUT: '100\n'
+RC: 0
+STDERR: ''

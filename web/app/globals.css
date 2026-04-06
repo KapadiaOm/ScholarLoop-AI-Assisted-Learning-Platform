@@ -1,0 +1,496 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─── */
+@layer base {
+  :root {
+    --background: 225 20% 98.5%;
+    --foreground: 224 71% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 8%;
+
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 224 71% 8%;
+
+    --muted: 220 20% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 243 75% 95%;
+    --accent-foreground: 243 75% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 243 75% 59%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 225 40% 7%;
+    --foreground: 213 31% 91%;
+
+    --card: 224 35% 10%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 35% 10%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 243 75% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 30% 15%;
+    --secondary-foreground: 213 31% 91%;
+
+    --muted: 224 30% 15%;
+    --muted-foreground: 218 11% 55%;
+
+    --accent: 243 40% 18%;
+    --accent-foreground: 243 75% 75%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224 25% 16%;
+    --input: 224 25% 16%;
+    --ring: 243 75% 65%;
+  }
+}
+
+/* ─── Base Resets ─── */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ─── Custom Scrollbars ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(220 13% 78%);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 13% 65%);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(224 20% 22%);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(224 20% 30%);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(220 13% 78%) transparent;
+}
+.dark * {
+  scrollbar-color: hsl(224 20% 22%) transparent;
+}
+
+/* ─── Text Selection ─── */
+::selection {
+  background: hsl(243 75% 59% / 0.2);
+  color: inherit;
+}
+.dark ::selection {
+  background: hsl(243 75% 65% / 0.3);
+}
+
+/* ─── Focus Ring Styles ─── */
+@layer components {
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50;
+  }
+}
+
+/* ─── Markdown / Prose Styles ─── */
+.prose pre {
+  @apply bg-slate-950 text-slate-50 rounded-xl p-4 overflow-x-auto my-4 border border-slate-800;
+}
+
+.prose code {
+  @apply bg-indigo-50 text-indigo-700 px-1.5 py-0.5 rounded-md text-sm font-mono;
+}
+
+.dark .prose code {
+  @apply bg-indigo-950/50 text-indigo-300;
+}
+
+.prose pre code {
+  @apply bg-transparent text-inherit p-0;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  @apply font-semibold tracking-tight text-slate-900 mt-8 mb-4;
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3 {
+  @apply text-slate-100;
+}
+
+.prose p {
+  @apply leading-7 mb-4 text-slate-600;
+}
+
+.dark .prose p {
+  @apply text-slate-300;
+}
+
+.prose ul {
+  @apply list-disc list-outside ml-6 mb-4 text-slate-600;
+}
+
+.dark .prose ul {
+  @apply text-slate-300;
+}
+
+.prose ol {
+  @apply list-decimal list-outside ml-6 mb-4 text-slate-600;
+}
+
+.dark .prose ol {
+  @apply text-slate-300;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-indigo-400 pl-4 italic my-4 text-slate-500;
+}
+
+.dark .prose blockquote {
+  @apply text-slate-400 border-indigo-500;
+}
+
+.prose a {
+  @apply text-indigo-600 hover:text-indigo-700 underline decoration-indigo-300 underline-offset-2;
+}
+
+.dark .prose a {
+  @apply text-indigo-400 hover:text-indigo-300 decoration-indigo-700;
+}
+
+.prose strong {
+  @apply text-slate-800 font-semibold;
+}
+
+.dark .prose strong {
+  @apply text-slate-100;
+}
+
+/* ─── KaTeX Dark Mode ─── */
+.dark .katex {
+  color: #e2e8f0;
+}
+
+.dark .katex .mord,
+.dark .katex .mbin,
+.dark .katex .mrel,
+.dark .katex .mopen,
+.dark .katex .mclose,
+.dark .katex .mpunct,
+.dark .katex .minner,
+.dark .katex .mop {
+  color: #e2e8f0;
+}
+
+/* ─── Tables ─── */
+.prose table {
+  @apply border-collapse;
+}
+
+.prose th {
+  @apply bg-slate-50 text-slate-800 font-semibold px-4 py-2.5 border border-slate-200 text-sm;
+}
+
+.dark .prose th {
+  @apply bg-slate-800 text-slate-200 border-slate-700;
+}
+
+.prose td {
+  @apply px-4 py-2.5 border border-slate-200 text-slate-600 text-sm;
+}
+
+.dark .prose td {
+  @apply border-slate-700 text-slate-300;
+}
+
+/* ─── Animations ─── */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* ─── Rough Notation Annotations ─── */
+.rough-notation-container {}
+
+.rough-notation {
+  display: inline;
+  position: relative;
+}
+
+.rough-circle {
+  position: relative;
+  display: inline-block;
+  padding: 0 6px;
+}
+
+.rough-circle::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2.5px solid #ef4444;
+  border-radius: 50%;
+  transform: rotate(-2deg);
+  filter: url(#rough-filter);
+  animation: rough-draw 0.5s ease-out forwards;
+}
+
+.rough-circle::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -2px;
+  right: -6px;
+  bottom: -5px;
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  border-radius: 45% 55% 50% 50%;
+  transform: rotate(1deg);
+}
+
+.rough-highlight {
+  background:
+    linear-gradient(
+      104deg,
+      rgba(254, 240, 138, 0) 0.9%,
+      rgba(254, 240, 138, 1) 2.4%,
+      rgba(254, 240, 138, 0.5) 5.8%,
+      rgba(254, 240, 138, 0.3) 93%,
+      rgba(254, 240, 138, 0.8) 96%,
+      rgba(254, 240, 138, 0) 98%
+    ),
+    linear-gradient(
+      183deg,
+      rgba(254, 240, 138, 0) 0%,
+      rgba(254, 240, 138, 0.4) 7.9%,
+      rgba(254, 240, 138, 0) 15%
+    );
+  padding: 0.1em 0.2em;
+  margin: 0 -0.2em;
+  border-radius: 0.2em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.rough-box {
+  position: relative;
+  display: inline-block;
+  padding: 2px 6px;
+}
+
+.rough-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  right: -3px;
+  bottom: -2px;
+  border: 2px solid #6366f1;
+  border-radius: 2px;
+  transform: rotate(-0.5deg) skewX(-0.5deg);
+}
+
+.rough-box::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  right: -5px;
+  bottom: -4px;
+  border: 1.5px solid rgba(99, 102, 241, 0.3);
+  border-radius: 1px;
+  transform: rotate(0.5deg);
+}
+
+.rough-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.rough-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 4px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' stroke='%231e293b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    repeat-x;
+  background-size: 12px 4px;
+}
+
+.dark .rough-underline::after {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' stroke='%23e2e8f0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    repeat-x;
+  background-size: 12px 4px;
+}
+
+.dark .rough-highlight {
+  background:
+    linear-gradient(
+      104deg,
+      rgba(251, 191, 36, 0) 0.9%,
+      rgba(251, 191, 36, 0.4) 2.4%,
+      rgba(251, 191, 36, 0.2) 5.8%,
+      rgba(251, 191, 36, 0.15) 93%,
+      rgba(251, 191, 36, 0.35) 96%,
+      rgba(251, 191, 36, 0) 98%
+    ),
+    linear-gradient(
+      183deg,
+      rgba(251, 191, 36, 0) 0%,
+      rgba(251, 191, 36, 0.2) 7.9%,
+      rgba(251, 191, 36, 0) 15%
+    );
+}
+
+.rough-bracket {
+  display: inline;
+}
+
+.rough-bracket-container {
+  position: relative;
+  padding-left: 16px;
+  margin-left: 4px;
+}
+
+.rough-bracket-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -4px;
+  bottom: -4px;
+  width: 10px;
+  border-left: 3px solid #8b5cf6;
+  border-top: 3px solid #8b5cf6;
+  border-bottom: 3px solid #8b5cf6;
+  border-radius: 4px 0 0 4px;
+  transform: scaleX(0.6);
+  transform-origin: left center;
+}
+
+span.rough-bracket {
+  border-left: 3px solid #8b5cf6;
+  padding-left: 8px;
+  margin-left: 4px;
+  display: inline;
+  position: relative;
+}
+
+span.rough-bracket::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: -2px;
+  width: 8px;
+  height: 3px;
+  border-left: 3px solid #8b5cf6;
+  border-top: 3px solid #8b5cf6;
+  border-radius: 3px 0 0 0;
+}
+
+span.rough-bracket::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  bottom: -2px;
+  width: 8px;
+  height: 3px;
+  border-left: 3px solid #8b5cf6;
+  border-bottom: 3px solid #8b5cf6;
+  border-radius: 0 0 0 3px;
+}
+
+@keyframes rough-draw {
+  from {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@media print {
+  .rough-circle::before,
+  .rough-circle::after,
+  .rough-box::before,
+  .rough-box::after,
+  .rough-underline::after,
+  .rough-bracket-container::before {
+    filter: none;
+    animation: none;
+  }
+}

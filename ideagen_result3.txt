@@ -1,0 +1,12 @@
+﻿============================================================
+Idea Generator Diagnostic
+============================================================
+[CodeExecutor] DEBUG: Loaded run_code config from solve_config.yaml (with main.yaml)
+LLM Config:
+  Binding: gemini
+  Model: gemini-2.5-flash
+
+1. Testing MaterialOrganizerAgent...
+[Ideagen.material_organizer] DEBUG: Prompts loaded: material_organizer (en)
+[Ideagen.material_organizer] INFO: Processing 1 records...
+[Ideagen.material_organizer] DEBUG: LLM Input [material_organizer:material_organizer] system=2129chars, user=312chars

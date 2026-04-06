@@ -1,0 +1,142 @@
+﻿============================================================
+Idea Generator Diagnostic
+============================================================
+[CodeExecutor] DEBUG: Loaded run_code config from solve_config.yaml (with main.yaml)
+LLM Config:
+  Binding: gemini
+  Model: gemini-2.5-flash
+
+1. Testing MaterialOrganizerAgent...
+[Ideagen.material_organizer] DEBUG: Prompts loaded: material_organizer (en)
+[Ideagen.material_organizer] INFO: Processing 1 records...
+[Ideagen.material_organizer] DEBUG: LLM Input [material_organizer:material_organizer] system=2129chars, user=312chars
+python : C:\Users\Om\D
+ownloads\DeepTutor-mai
+n\DeepTutor-main\src\s
+ervices\llm\cloud_prov
+ider.py:581: 
+FutureWarning: 
+At line:1 char:1
++ python scripts/diagn
+ose_ideagen.py 2>&1 | 
+Out-File -Encoding 
+utf8 ide ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (C:\Users\O   
+ m\Dow...FutureWar    
+ning: :String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+
+All support for the 
+`google.generativeai` 
+package has ended. It 
+will no longer be 
+receiving 
+updates or bug fixes. 
+Please switch to the 
+`google.genai` 
+package as soon as 
+possible.
+See README for more 
+details:
+
+https://github.com/goo
+gle-gemini/deprecated-
+generative-ai-python/b
+lob/main/README.md
+
+  import 
+google.generativeai 
+as genai
+WARNING: All log 
+messages before 
+absl::InitializeLog() 
+is called are written 
+to STDERR
+E0000 00:00:1773058202
+.560501    3712 alts_c
+redentials.cc:93] 
+ALTS creds ignored. 
+Not running on GCP 
+and untrusted ALTS is 
+not enabled.
+[Ideagen.material_organizer] DEBUG: LLM Output [material_organizer:material_organizer] response=574chars
+[Ideagen.material_organizer] DEBUG: LLM response: model=gemini-2.5-flash, duration=6.58s
+[Ideagen.material_organizer] DEBUG: LLM response length: 574 chars
+[Ideagen.material_organizer] INFO: Extracted 1 knowledge points
+[Ideagen.material_organizer] INFO: Validated 1 knowledge points
+Extracted 1 knowledge points: [{'knowledge_point': 'Python as a High-Level Programming Language', 'description': "Python is defined as a high-level programming language. This classification implies its abstraction from hardware specifics, enhanced readability, and suitability for various programming paradigms and applications. Understanding what constitutes a high-level language and Python's characteristics within this category offers a foundational knowledge point for further study into programming language design and application."}]
+
+2. Testing IdeaGenerationWorkflow...
+[Ideagen.idea_generation] DEBUG: Prompts loaded: idea_generation (en)
+[Ideagen.idea_generation] INFO: Calling LLM to filter 1 knowledge points...
+[Ideagen.idea_generation] DEBUG: LLM Input [idea_generation:idea_generation] system=1169chars, user=662chars
+E0000 00:00:1773058206
+.077531    3712 alts_c
+redentials.cc:93] 
+ALTS creds ignored. 
+Not running on GCP 
+and untrusted ALTS is 
+not enabled.
+[Ideagen.idea_generation] DEBUG: LLM Output [idea_generation:idea_generation] response=573chars
+[Ideagen.idea_generation] DEBUG: LLM response: model=gemini-2.5-flash, duration=4.69s
+[Ideagen.idea_generation] DEBUG: LLM response length: 573 chars
+[Ideagen.idea_generation] INFO: Parsed result: 1 filtered points from 1 original
+[Ideagen.idea_generation] INFO: Generating ideas for: Python as a High-Level Programming Language
+[Ideagen.idea_generation] DEBUG: LLM Input [idea_generation:idea_generation] system=1724chars, user=630chars
+E0000 00:00:1773058210
+.762366    3712 alts_c
+redentials.cc:93] 
+ALTS creds ignored. 
+Not running on GCP 
+and untrusted ALTS is 
+not enabled.
+[Ideagen.idea_generation] DEBUG: LLM Output [idea_generation:idea_generation] response=2592chars
+[Ideagen.idea_generation] DEBUG: LLM response: model=gemini-2.5-flash, duration=12.16s
+[Ideagen.idea_generation] DEBUG: LLM response length: 2592 chars
+[Ideagen.idea_generation] INFO: Generated 7 research ideas
+[Ideagen.idea_generation] INFO: Filtering 7 ideas for: Python as a High-Level Programming Language
+[Ideagen.idea_generation] DEBUG: LLM Input [idea_generation:idea_generation] system=2234chars, user=3242chars
+E0000 00:00:1773058222
+.929334    3712 alts_c
+redentials.cc:93] 
+ALTS creds ignored. 
+Not running on GCP 
+and untrusted ALTS is 
+not enabled.
+[Ideagen.idea_generation] DEBUG: LLM Output [idea_generation:idea_generation] response=1140chars
+[Ideagen.idea_generation] DEBUG: LLM response: model=gemini-2.5-flash, duration=20.39s
+[Ideagen.idea_generation] DEBUG: LLM response length: 1140 chars
+[Ideagen.idea_generation] ERROR: JSON decode error: Failed to parse JSON
+[Ideagen.idea_generation] DEBUG: Raw response: ```json
+{
+  "kept_ideas": [
+    "A comparative study on the performance overhead of Python's high-level abstractions (e.g., dynamic typing, automatic memory management, duck typing) versus equivalent implementations in lower-level languages (e.g., C/C++, Rust) for specific computationally intensive domains (e.g., scientific computing, real-time data processing), identifying optimal scenarios for hybridization and proposing architectural patterns.",
+    "Developing a quantitative metric and metho...
+[Ideagen.idea_generation] DEBUG: LLM Input [idea_generation:idea_generation] system=1679chars, user=1097chars
+E0000 00:00:1773058243
+.317640    3712 alts_c
+redentials.cc:93] 
+ALTS creds ignored. 
+Not running on GCP 
+and untrusted ALTS is 
+not enabled.
+[Ideagen.idea_generation] DEBUG: LLM Output [idea_generation:idea_generation] response=4797chars
+[Ideagen.idea_generation] DEBUG: LLM response: model=gemini-2.5-flash, duration=8.69s
+Final Markdown Length: 4833
+
+# Research Ideas Generation Result
+
+## Python as a High-Level Programming Language
+
+**Knowledge Point Review:**
+Python is categorized as a high-level programming language, a classification that emphasizes its abstraction from the intricate details of computer hardware. This characteristic contributes to its enhanced readability, simplified syntax, and inherent suitability for a wide array of programming paradigms, including object-oriented, imperative, and functional styles. As a high-level lang...
+
+Idea Generator test completed successfully!
